@@ -1,4 +1,4 @@
-import kai, math, statistics, random, calendar, calfunc
+import kai, math, statistics, random, calendar, calfunc, prime, pfact
 
 
 # a = [1,5,3,2,4,6,7,8,9,10,11,12,15,16,14,12,13,55,213,64,2222222222,5235235,5121,26346,12341236,45134,245,252,45,35,2,45,765]
@@ -42,14 +42,4 @@ import kai, math, statistics, random, calendar, calfunc
 
 # calfunc.cal(theyear, themonth)
 
-dic1 = {1:2, 3:4}
-dic2 = {1:2}
-
-a = [1, 2, 3, 4, 5]
-b = [1, 2, 3]
-
-for x in dic1:
-	if x in dic2:
-		continue
-	else:
-		print(dic1.get(x))
+print(pfact.lcm(22, 67))
