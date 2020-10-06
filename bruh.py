@@ -1,8 +1,9 @@
-ans = eval(str(input('yo')))
+dic = {}
 
-if isinstance(ans, str):
-    print('yo')
+for i in range(10):
+    dic[i] = i**2
 
-else:
-    
-    print(ans)
+print(dic)
+
+for x, y in dic.items():
+    print(x * y)
