@@ -45,6 +45,10 @@ def factorsAll(number):
 
 
 def lcm(num1 = 0, num2 = 0):
+    
+    if num1 < 0 or num2 < 0:
+        return 'Positive numbers please'
+
     factors1 = factors(num1)
     factors2 = factors(num2)
     list1 = {}
