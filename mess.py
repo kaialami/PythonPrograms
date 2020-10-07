@@ -42,4 +42,9 @@ import kai, math, statistics, random, calendar, calfunc, prime, pfact
 
 # calfunc.cal(theyear, themonth)
 
-print(pfact.lcm(22, 67))
+n1 = 213
+n2 = 129
+
+print(pfact.lcm(n1, n2))
+
+print(pfact.gcf(n1, n2))
