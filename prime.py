@@ -1,11 +1,14 @@
 
 
 def isPrime(answer):
-    import math
+
+    num = answer
+
+    if num < 0:
+        return 'Positive numbers only'
 
     is_prime = True
-    num = answer
-    sqrt = math.isqrt(num)
+    sqrt = int(num**0.5)
     
     if num <= 3:
         is_prime = True
@@ -32,6 +35,5 @@ def isPrime(answer):
     else:
         return True
     
-
 
 
