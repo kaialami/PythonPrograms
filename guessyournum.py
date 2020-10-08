@@ -1,6 +1,6 @@
 import random
 
-print('Think of a number between (and including) 1 and 100\nI will ask 5 questions about your number.\nIf I can\'t guess after 5 tries, you win!')
+print('Think of a number between (and including) 1 and 100\nI will ask 5 questions about your number.\nIf I can\'t guess it, you win!')
 
 error = '\nEnter either a yes or no. '
 
@@ -34,6 +34,8 @@ if inp == yes:
             num.remove(x)
     ognum = num
     div = '4'
+    rd1 = 4
+    rd2 = 6
             
 else:
     for x in num:
@@ -41,6 +43,8 @@ else:
             num.remove(x)
     ognum = num
     div = '3'
+    rd1 = 3
+    rd2 = 5
 
 first = ognum[0]
 
@@ -62,8 +66,7 @@ if inp == yes:
         num = ognum[25 :]
     ld1 = 6
     ld2 = 8
-    rd1 = 4
-    rd2 = 6
+    
 else:
     if first == 2:
         num = ognum[: 25 - 1]
@@ -71,8 +74,6 @@ else:
         num = ognum[: 25]
     ld1 = 1
     ld2 = 3
-    rd1 = 3
-    rd2 = 5
     
 # q3
 q3 = q3 + div + '? '
