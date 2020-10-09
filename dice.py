@@ -1,6 +1,20 @@
 import random
 
 while True:
+	size = input('What size dice to roll? (6, 10, etc.): ')
+	while True:
+		try:
+			int(size)
+			break
+		except:
+			size = input('Please enter a number: ')
+
+	size = int(size)
+	
+	if size <= 0:
+		print('The number must be greater than 0')
+		continue
+
 	inp = input('How many dice to roll?: ')
 	result = []
 
@@ -18,7 +32,7 @@ while True:
 		continue
 
 	for x in range(inp):
-		r = random.randint(1, 6)
+		r = random.randint(1, size)
 		result.append(r)
 
 	print('Result: ' + str(result))
