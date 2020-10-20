@@ -27,6 +27,7 @@ def cal(year, month):
             
             print(monthDays(formula, daysInMonth), end = '')
         print('')
+    return ''
         
     
 def monthDays(formula = 0, daysInMonth = 31):
@@ -52,7 +53,14 @@ def isLeap(year):
         return False
         
 
+def fullCal(year):
+    print(str(cal(year, 1)), str(cal(year, 2)), str(cal(year, 3)), 
+          str(cal(year, 4)), str(cal(year, 5)), str(cal(year, 6)), 
+          str(cal(year, 7)), str(cal(year, 8)), str(cal(year, 9)), 
+          str(cal(year, 10)), str(cal(year, 11)), str(cal(year, 12)))
 
+fullCal(2002)
+#cal(2002, 1)
 
 
 #themonth = 2
