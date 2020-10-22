@@ -54,10 +54,46 @@ def isLeap(year):
         
 
 def fullCal(year):
-    print(str(cal(year, 1)), str(cal(year, 2)), str(cal(year, 3)), 
-          str(cal(year, 4)), str(cal(year, 5)), str(cal(year, 6)), 
-          str(cal(year, 7)), str(cal(year, 8)), str(cal(year, 9)), 
-          str(cal(year, 10)), str(cal(year, 11)), str(cal(year, 12)))
+    import calendar
+
+    monthName = {1:'January-31', 2:'February-28', 3:'March-31', 
+                 4:'April-30', 5:'  May-31', 6:' June-30', 
+                 7:'July-31', 8:'August-31', 9:'September-30', 
+                 10:'October-31', 11:'November-30', 12:'December-31'}
+    
+    y = ' ' + str(year)
+    
+    if isLeap(year):
+        monthName[2] = 'February-29'
+    
+    print('     ' + monthName.get(1)[:-3] + y + '               ' + monthName.get(2)[:-3] + y + '                 ' + monthName.get(3)[:-3] + y)
+    print(' M  T  W  T  F  S  S         M  T  W  T  F  S  S         M  T  W  T  F  S  S')
+    print('---------------------       ---------------------       ---------------------')
+    
+    firstDay = calendar.weekday(year, 1, 1) + 1    
+    for row in range(6):
+        for weekday in range(7):
+            formula = (row * 7 + (weekday + 1 + firstDay)) - (firstDay * 2 - 1)
+            
+            print(monthDays(formula, int(monthName.get(1)[-2:])), end = '')  
+    print('')          
+    
+    print('      ' + monthName.get(4)[:-3] + y + '                 ' + monthName.get(5)[:-3] + y + '                  ' + monthName.get(6)[:-3] + y)
+    print(' M  T  W  T  F  S  S         M  T  W  T  F  S  S         M  T  W  T  F  S  S')
+    print('---------------------       ---------------------       ---------------------')
+
+
+    print('      ' + monthName.get(7)[:-3] + y + '                   ' + monthName.get(8)[:-3] + y + '               ' + monthName.get(9)[:-3] + y)
+    print(' M  T  W  T  F  S  S         M  T  W  T  F  S  S         M  T  W  T  F  S  S')
+    print('---------------------       ---------------------       ---------------------')
+
+
+    print('     ' + monthName.get(10)[:-3] + y + '                ' + monthName.get(11)[:-3] + y + '              ' + monthName.get(12)[:-3] + y)
+    print(' M  T  W  T  F  S  S         M  T  W  T  F  S  S         M  T  W  T  F  S  S')
+    print('---------------------       ---------------------       ---------------------')
+
+
+
 
 fullCal(2002)
 #cal(2002, 1)

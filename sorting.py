@@ -54,22 +54,63 @@ def selectionSort(lst):
             result[minimum], result[i] = result[i], result[minimum]
 
     return result
-            
+
+
+def mergeSort(lst):
+    result = lst
+    size = len(result)
+    half = int(size/2)
+    if size == 1:
+        return result
+    
+
+    l1 = lst[:half]
+    l2 = lst[half:]
+    
+    return merge(mergeSort(l1), mergeSort(l2))
+
+def merge(lst1, lst2):
+    lst3 = []
+    while len(lst1) > 0 and len(lst2) > 0:
+        a = lst1[0]
+        b = lst2[0]
+        if a > b:
+            lst3.append(b)
+            lst2.remove(b)
+        else:
+            lst3.append(a)
+            lst1.remove(a)
+
+    while len(lst1) > 0:
+        a = lst1[0]
+        lst3.append(a)
+        lst1.remove(a)
+    while len(lst2) > 0:
+        b = lst2[0]
+        lst3.append(b)
+        lst2.remove(b)
+
+    return lst3
+
+
+ 
 
 unsortedList = []
-for i in range(10):
+
+for i in range(100):
     unsortedList.append(random.randint(-99, 99))
- #   unsortedList.append(i + 1)
+    # unsortedList.append(i + 1)
  
 
 print(unsortedList)
 
 
-sortedList = selectionSort(unsortedList)
+sortedList = mergeSort(unsortedList)
+print('')
 print(sortedList)
-#print(sorted(unsortedList))
-
-
+# print(bubbleSort(unsortedList))
+print(sorted(unsortedList) == sortedList)
+    
 
 end = time.time()
 
