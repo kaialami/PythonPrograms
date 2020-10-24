@@ -1,4 +1,4 @@
-def perfect1(num):
+def perfect_slow(num):
     divisors = set()
 
     if num == 0:
@@ -22,7 +22,7 @@ def perfect1(num):
         return False
 
 
-def perfect(num):
+def perfect_fail(num):
     from pfact import factors
     if num == 0:
         return False
@@ -65,7 +65,7 @@ def perfect(num):
         thesum = thesum + v
     return True if thesum == num else False
     
-def perfectC(num):
+def perfect_comb(num):
     from pfact import factors
     from itertools import combinations
     
@@ -98,8 +98,45 @@ def perfectC(num):
         finalSum = finalSum + k
     return True if finalSum == num else False
 
+def perfect(num):
+    from pfact import factors
 
+    numFactors = factors(num)
+    factList = []
+    for x, y in numFactors:
+        while y > 0:
+            factList.append(x)
+            y -= 1
+    
+    factSet = {1}
+    for n in factList:
+        factSet.add(n)
+    
+    clone = factList
+    dec = len(clone)
+    while dec > 1:
+        prod = 1
+        for i in factList:
+            index = factList.index(i)
+            prod = i
+            for j in range(dec):
+                if not index == j:
+                    prod = prod * factList[j]
+                factSet.add(prod)
+        clone.remove(clone[0])
+        dec = len(clone)
+    
+    if num in factSet:
+        factSet.remove(num)
+    final_sum = 0
+    for n in factSet:
+        final_sum = final_sum + n
 
-# print(perfect1(28))
-# print(perfect(28))
-print(perfectC(100))
+    return True if final_sum == num else False
+    
+
+n = 28
+if perfect(n):
+    print(n,'is a perfect number')
+else:
+    print(n,'is not a perfect number')

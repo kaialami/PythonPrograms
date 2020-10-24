@@ -1,4 +1,4 @@
-import random, time
+import random, time, sys
 
 start = time.time()
 
@@ -92,21 +92,30 @@ def merge(lst1, lst2):
 
     return lst3
 
+def shellSort(lst):
+    size = len(lst)
+    interval = 1
+    while interval < size / 3:
+        interval = interval * 3 + 1
+    
+    while interval > 0:
+        outer = interval
+        for x in range(size):
+            insert = lst[outer]
 
- 
+
 
 unsortedList = []
 
-for i in range(100):
+for i in range(10):
     unsortedList.append(random.randint(-99, 99))
     # unsortedList.append(i + 1)
- 
+
 
 print(unsortedList)
 
 
 sortedList = mergeSort(unsortedList)
-print('')
 print(sortedList)
 # print(bubbleSort(unsortedList))
 print(sorted(unsortedList) == sortedList)
