@@ -52,20 +52,6 @@ def isLeap(year):
     else:
         return False
 
-def monthDaysFull(formula = 0, daysInMonth = 31, daysDict = {}):
-    
-    ret = ''
-    strFormula = str(formula)
-    if formula < 1:
-	    ret = '  '
-    elif formula < 10:
-	    ret = ' ' + strFormula + ''
-    elif formula >= 10 and formula <= daysInMonth:
-        ret = strFormula + ''
-    
-    return formula
-
-
 def fullCal(year):
     import calendar
 
@@ -178,7 +164,7 @@ def fullCal(year):
     # 2/4
     print('      ' + monthName.get(4)[:-3] + yearName + '                 ' + monthName.get(5)[:-3] + yearName + '                   ' + monthName.get(6)[:-3] + yearName)
     print(' M  T  W  T  F  S  S         M  T  W  T  F  S  S         M  T  W  T  F  S  S')
-    print(' ---------------------       ---------------------       ---------------------')
+    print('---------------------       ---------------------       ---------------------')
 
     rowDict = {}
     for row in range(6):
@@ -322,7 +308,7 @@ def fullCal(year):
     return ''
 
 
-fullCal(2001)
+fullCal(2020)
 
 
 
