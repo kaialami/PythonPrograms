@@ -415,7 +415,7 @@ It sounds like someone hitting something.
             noise = str(input(error_yn + 'Will you investigate the strange noise?: ')).lower()
     if noise:
         print(f'''{name} decides to investigate the noise.
-{they} opens the door to the bar and sees a large, bald man with a scruffy beard. He's beating up a frail, skinny man.
+{theyC} opens the door to the bar and sees a large, bald man with a scruffy beard. He's beating up a frail, skinny man.
 
 "I'm sorry, please, I didn't mean to! I swear on my momma! Please stop!" the frail man cries.
 This is not a fair fight.
