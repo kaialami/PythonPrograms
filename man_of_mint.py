@@ -10,7 +10,7 @@ pygame.display.set_caption("Man of Mint")
 win.fill((18,40,70))
 colour = (23,202,138)
 font = pygame.font.Font("freesansbold.ttf", 20)
-text = font.render('MAN OF MINT', True, (255, 255, 255), (0, 0, 0))
+text = font.render("'MAN OF MINT'", True, (255, 255, 255), (0, 0, 0))
 textRect = text.get_rect()
 textRect.center = (winWidth // 2, winHeight + 20)
 

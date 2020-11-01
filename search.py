@@ -46,30 +46,37 @@ def fibMember1(num, lst):
     #         return True
 
 def fibMember(num, lst):
-    clone = lst.copy()
-    size = len(clone)
+    size = len(lst)
     fib2 = 0
     fib1 = 1
     fib = fib2 + fib1
-    print(fib2, fib1, fib)
     while fib < size:
         fib2 = fib1
         fib1 = fib
         fib = fib2 + fib1
-        print(fib)
 
-    while fib > 0:
-        i = min(fib2, size-1)
+    off = -1
+    while fib > 1:
+        i = min(fib2 + off, size-1)
         if num == lst[i]:
             return True
         elif num < lst[i]:
+            fib = fib2
+            fib1 = fib1 - fib
+            fib2 = fib - fib1
+        else:
+            fib = fib1
+            fib1 = fib2
+            fib2 = fib - fib1
+            off = i
+    return False
 
 
 from random import randint
-number = 5
-lst = [1, 2, 2, 4, 5, 6, 8, 8, 9, 10]
-# for x in range(10):
-#     lst.append(randint(1, 10))
+number = -111
+lst = []
+for x in range(10):
+    lst.append(randint(1, 10))
 sortedLst = sorted(lst)
 print(sortedLst)
 print(fibMember(number, sortedLst))

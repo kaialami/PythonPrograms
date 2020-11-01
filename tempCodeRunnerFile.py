@@ -1,1 +1,2 @@
-.update()
+
+    while fib > 1:
