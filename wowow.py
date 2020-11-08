@@ -1,15 +1,11 @@
-dic = {}
-dic2 = {}
-for x in range(10):
-    dic[x] = '10'
-print(dic)
+for x in range(1, 101):
+    if x % 5 == 0 and x % 3 == 0:
+        print('FizzBuzz')
+    elif x % 5 == 0:
+        print("Buzz")
+    elif x % 3 == 0:
+        print('Fizz')
+    else:
+        print(x)
 
-for x in range(10):
-    pee = dic.get(x)
-    while pee in dic2:
-        pee = 'w' + pee
-    print(pee)
-    dic2[x] = pee
-
-
-print(dic2)
+print()
