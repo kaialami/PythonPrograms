@@ -1,7 +1,7 @@
 import random, sys
 name = str(input('Character Name: ')).capitalize()
 print('')
-
+# test
 # Choose your character's class
 print('Character Classes: ')
 classes = {
