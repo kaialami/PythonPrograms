@@ -1,4 +1,7 @@
-def binaryTree(lst):
+import sys
+
+
+def binaryTree1(lst):
     size = len(lst)
     if size < 3:
         if size == 2:
@@ -43,13 +46,41 @@ def unbalTree(lst):
                 ra.append(lst[x])
         ret = [root, la, ra]
     print([parent, la, ra])
-        
 
-from random import randint
-the_list = []
-for x in range(7):
-    the_list.append(randint(1, 20))
+def treeInsert(array, root):
+    if array == []:
+        array.append(root)
+        array.append([])
+        array.append([])
+    else:
+        while True:
+            if root <= array[0]:
+                if array[1] == []:
+                    array[1] = [root, [], []]
+                    return 
+                else:
+                    array = array[1]
+            elif root > array[0]:
+                if array[2] == []:
+                    array[2] = [root, [], []]
+                    return 
+                else:
+                    array = array[2]
 
-the_list.sort()
-print(the_list)
-print(unbalTree(the_list))
+def binaryTree(lst):
+    array = []
+    for i in range(0, len(lst)):
+        treeInsert(array, lst[i])
+    return array
+
+
+
+# from random import randint
+# the_list = []
+# for x in range(5):
+#     the_list.append(randint(1, 10))
+
+# the_list = sorted(the_list)
+# print(the_list)
+# print(binaryTree(the_list))
+
