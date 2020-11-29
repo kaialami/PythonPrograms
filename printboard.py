@@ -142,7 +142,7 @@ def cpuWin(player = 'O', dic = {}):
 # def cpuBlock(player = 'O', dic = {}):
 
 
-			
+print(printBoard(board))			
 	
 
 # print(cpuWin('O', allO))

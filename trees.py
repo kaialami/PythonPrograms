@@ -78,7 +78,7 @@ def binaryTree(lst):
 # from random import randint
 # the_list = []
 # for x in range(5):
-#     the_list.append(randint(1, 10))
+#     the_list.append(randint(1, 100))
 
 # the_list = sorted(the_list)
 # print(the_list)
