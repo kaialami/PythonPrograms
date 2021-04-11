@@ -1,2 +1,1 @@
-
-    while fib > 1:
+This is a SAMPLE sentence for encoding
